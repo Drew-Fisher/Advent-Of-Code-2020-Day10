@@ -21,10 +21,10 @@ public class Main {
         //stop timer
         long endTime = System.nanoTime();
         //calculate run time
-        long duration = (endTime - startTime);
+        double duration = ((double) endTime - (double)startTime)/1000000;
         //print results
         System.out.println("Day 10 Part 1: " + dayTenPart1);
-        System.out.println("Part 1 Duration: "+duration);
+        System.out.println("Part 1 Duration: "+duration+"ms");
 
         //Day 10 part 2
         //reset the adaptor List to unsorted
@@ -44,9 +44,9 @@ public class Main {
         //stop timer
         endTime = System.nanoTime();
         //calculate run time
-        duration = (endTime - startTime);
+        duration = ((double) endTime - (double)startTime)/1000000;
         //print results
         System.out.println("Day 10 Part 2: " + dayTenPart2);
-        System.out.println("Part 2 Duration: " + duration);
+        System.out.println("Part 2 Duration: " + duration+"ms");
     }
 }
