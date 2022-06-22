@@ -33,7 +33,7 @@ public class Main {
 
         //Day 10 part 1
 
-        int dayTenPart1 = DayTen.oneXThreeJolt(adapters);
+        int dayTenPart1 = DayTen.partOne(adapters);
 
         System.out.println("Day 10 Part 1: " + dayTenPart1);
 
@@ -43,7 +43,7 @@ public class Main {
         DayTen.Node root = new DayTen.Node(0);
         
         //run the method
-        BigInteger dayTenPart2 = DayTen.calculatePossibilities(root, adapters);
+        BigInteger dayTenPart2 = DayTen.partTwo(root, adapters);
 
         System.out.println("Day 10 Part 2: " + dayTenPart2);
     }

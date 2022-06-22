@@ -10,7 +10,7 @@ public class DayTen {
     private static Map<Integer,BigInteger> memory = new HashMap<Integer,BigInteger>();
 
     //method for day 10 part 1
-    public static int oneXThreeJolt(List<Integer> adapters){
+    public static int partOne(List<Integer> adapters){
 
         //defines the value of the last checked adaptor starts at 0
         int last = 0;
@@ -49,7 +49,7 @@ public class DayTen {
     }
 
     //method for day 10 part 2
-    public static BigInteger calculatePossibilities(Node root, List<Integer> chargers){
+    public static BigInteger partTwo(Node root, List<Integer> chargers){
         //check if root is in memory
         if(memory.get(root.data) != null){
             return memory.get(root.data);
@@ -76,13 +76,14 @@ public class DayTen {
                 List<Integer> temp = chargers.subList(x+1,chargers.size());
 
                 //adds result of recursion to BigInt
-                combos = combos.add(calculatePossibilities(root.children.get(x),temp));
+                combos = combos.add(partTwo(root.children.get(x),temp));
             }
         }
 
         //Adds to memory
         memory.put(root.data,combos);
 
+        //returns
         return combos;
     }
 }
