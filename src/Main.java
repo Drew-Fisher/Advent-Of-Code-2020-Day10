@@ -47,9 +47,7 @@ public class Main {
             last = adapters.get(x);
         }
 
-        int result = one * three;
-
-        return result;
+        return one * three;
     }
 
     //simple N-ary node implementation
