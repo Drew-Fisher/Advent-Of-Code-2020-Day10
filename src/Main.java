@@ -4,47 +4,49 @@ import java.util.*;
 //runner class
 public class Main {
     public static void main(String [] args){
-
-        //path to Day_10_Input.txt
-        String dayOneInputPath = "ABSOLUTE_PATH";
-        //create List from input for day 1
-        List<Integer> dayOneInput = utils.readInput(dayOneInputPath);
-
-        //run day 1 part 1
-        int day1Part1 = DayOne.partOne(0,1,dayOneInput);
-        //print
-        System.out.println("Day 1 Part 1: " + day1Part1);
-
-        //don't runt very slow
-        //int day1Part2 = DayOne.partTwo(dayOneInput);
-
-        String path = "ABSOLUTE_PATH";
-
-        List<Integer> adapters = utils.readInput(path);
-
-        //read Day_10_Input.txt into List
-        adapters = utils.readInput(path);
-
-        //sort list in ascending order
-        Collections.sort(adapters);
-
-        //add the phones built in adaptor
-        adapters.add(adapters.get(adapters.size()-1)+3);
+        //path to input file
+        String path = "G://Show_Case_Projects//AdventOfCode//Day10//Day_10_Input.txt";
 
         //Day 10 part 1
-
+        //read input from file
+        List<Integer> adapters = utils.readInput(path);
+        //start the timer
+        long startTime = System.nanoTime();
+        //Sort List
+        Collections.sort(adapters);
+        //add phone adaptor value
+        adapters.add(adapters.get(adapters.size()-1)+3);
+        //run method
         int dayTenPart1 = DayTen.partOne(adapters);
-
+        //stop timer
+        long endTime = System.nanoTime();
+        //calculate run time
+        long duration = (endTime - startTime);
+        //print results
         System.out.println("Day 10 Part 1: " + dayTenPart1);
+        System.out.println("Part 1 Duration: "+duration);
 
         //Day 10 part 2
-        
+        //reset the adaptor List to unsorted
+        adapters = utils.readInput(path);
+
         //create root node of 0
         DayTen.Node root = new DayTen.Node(0);
         
-        //run the method
+        //start the timer
+        startTime = System.nanoTime();
+        //Sort List
+        Collections.sort(adapters);
+        //add phone adaptor value
+        adapters.add(adapters.get(adapters.size()-1)+3);
+        //run method
         BigInteger dayTenPart2 = DayTen.partTwo(root, adapters);
-
+        //stop timer
+        endTime = System.nanoTime();
+        //calculate run time
+        duration = (endTime - startTime);
+        //print results
         System.out.println("Day 10 Part 2: " + dayTenPart2);
+        System.out.println("Part 2 Duration: " + duration);
     }
 }
